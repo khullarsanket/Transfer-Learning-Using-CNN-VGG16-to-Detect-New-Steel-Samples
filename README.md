@@ -1,30 +1,28 @@
-# Transfer_Learning_using_VGG16_for_feature_generation_and_image_classification_using_SVM
+# Transfer Learning Using CNN VGG16 to Detect New Steel Samples
 
-# INTRODUCTION
-This repository implements the concept of transfer learning from a pretrained VGG16. 
+## Project Overview
 
-## Detailed Idea 
-The concept of transfer learning is used. Pretrained wights of the filters in the Convolutinal Neural Network VGG16 are used to obtain feature vector of the input images. The weights for the dense layers are not incorporated.
-Five different models are considered. Till each max pooled layer, different features can be extracted. For instance, till the first max pooled layer, the depth of the convolutional layer is 64 filters, thus the number of features that can be obtained from using the CNN (till this layer) from the input images will be 64. So these features can be transfered into an array of 64. If the layers till the second max pool layer is used, the depth of the covolutional layer is 128. Thus the number of features that can be obtained from using the CNN (till this layer) from the input images will be 128.  So these features can be transfered into an array of size 128, and so on. 
+This repository explores an innovative approach to classifying steel micrograph images using transfer learning from the VGG16 Convolutional Neural Network (CNN). By harnessing pretrained weights from VGG16's convolutional layers, we generate feature vectors for input images, which are then used for binary classification with a Support Vector Machine (SVM).
 
-Further, these features vectors are used as input in the Support Vector Machine for binary classification of the micrgraph images. As there are 4 (out of all the categories) categories, one-vs-one approach is used to implement SVM. As the SVM is a binary classifer, 6 (4C2) classifiers are trained for each model. For each model the most frequent classifier can be assigned (multilabel classifier).
+## Key Features
 
-The one-vs-one and multilabel classifer are also compared using the cross validation error. 
+- **Feature Extraction with VGG16:** Utilizes VGG16 up to various max-pooled layers for depth-specific feature extraction.
+- **SVM Classification:** Implements one-vs-one approach in SVM for binary classification across four distinct steel micrograph categories, leading to multilabel classification through majority voting.
+- **Cross-validation:** Employs cross-validation error for comparative analysis between one-vs-one and multilabel classifiers.
 
-![VGG16](https://user-images.githubusercontent.com/115849836/203476816-7582be1c-ba50-4848-b83a-03feab704648.png)
-#### As there are five different max pool layers, there will be five models.
+![image](https://github.com/khullarsanket/Transfer-Learning-Using-CNN-VGG16-to-Detect-New-Steel-Samples/assets/119709438/fa7b91b5-1b7b-425d-a42e-be47c3228c32)
 
+## Methodology
 
-# Problem Statement 
-![1](https://user-images.githubusercontent.com/115849836/203477653-487f01f7-0f4a-4681-9fe3-fe2bc9eac2f3.png)
-![2](https://user-images.githubusercontent.com/115849836/203477655-d1c89cef-eb94-4eba-9ac2-4ae6b83df418.png)
-![3](https://user-images.githubusercontent.com/115849836/203477650-3000bb9a-51de-42d5-933f-df274d4b9ec6.png)
+1. **Feature Vector Generation:** Extracts features from input images using different depths of VGG16, translating these into arrays of size corresponding to the depth's number of filters.
+2. **SVM Implementation:** Uses the extracted feature vectors for training SVM classifiers in a one-vs-one scheme, culminating in a multilabel classification system.
+3. **Validation:** Validates classifiers' performance using cross-validation error metrics.
 
-# Resources
-The problem statement is taken from the 6th chapter of the book Fundamentals of Pattern Recognition and Machine Learning (Ulisses Braga-Neto) - Question 6.12.
-The data set is also available on the writers (Ulisses Braga-Neto) personal website. 
+## Getting Started
 
-## The link to the data set used in this repository 
-https://drive.google.com/file/d/1zmhN_dqoxhOMUPCW0IAWL_7jYU7y0snF/view
+Follow the instructions for setting up the environment, using the pretrained VGG16 model for feature extraction, training the SVM classifiers, and evaluating the system's performance on new steel sample images.
 
-The data set is the folder nammed CMU-UHCS_Dataset
+## Conclusion
+
+This project demonstrates the efficacy of combining transfer learning from CNNs with SVM for the classification of steel micrograph images, showcasing the potential for advanced materials characterization.
+
