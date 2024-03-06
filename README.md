@@ -2,7 +2,9 @@
 
 ## Project Overview
 
-This repository explores an innovative approach to classifying steel micrograph images using transfer learning from the VGG16 Convolutional Neural Network (CNN). By harnessing pretrained weights from VGG16's convolutional layers, we generate feature vectors for input images, which are then used for binary classification with a Support Vector Machine (SVM).
+This repository explores an innovative approach to classifying steel micrograph images from the CMU-UHCS dataset using transfer learning from the VGG16 Convolutional Neural Network (CNN). By harnessing pretrained weights from VGG16's convolutional layers, we generate feature vectors for input images, which are then used for binary classification with a Support Vector Machine (SVM).
+
+![image](https://github.com/khullarsanket/Transfer-Learning-Using-CNN-VGG16-to-Detect-New-Steel-Samples/assets/119709438/4631a68c-84cd-4d95-9966-1a4aa4605ba4)
 
 ## Key Features
 
